@@ -16,6 +16,12 @@ repositories {
 }
 
 dependencies {
+
+	//Bean Validation
+	compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+	compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.1.6.Final'
+
+
 	//jsp
 	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 	providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
