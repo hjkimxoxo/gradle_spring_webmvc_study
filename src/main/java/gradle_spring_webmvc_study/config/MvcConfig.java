@@ -5,13 +5,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.validation.Validator;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import gradle_spring_webmvc_study.controller.RegisterRequestValidator;
+import gradle_spring_webmvc_study.interceptor.AuthCheckInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -43,6 +46,19 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Override
 	public Validator getValidator() {
 		return new RegisterRequestValidator();
+	}
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		// /edit/으로 시작하는 모든 경로에 인터셉터 적용
+		registry.addInterceptor(authCheckInterceptor())
+		.addPathPatterns("/edit/**").excludePathPatterns("/edit/help/**");
+		
+	}
+
+	private HandlerInterceptor authCheckInterceptor() {
+		
+		return new AuthCheckInterceptor();
 	}
 	
 	

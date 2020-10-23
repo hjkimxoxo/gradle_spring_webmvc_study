@@ -18,7 +18,7 @@ public class LoginCommandValidator implements Validator {
 	}
 
 	public LoginCommandValidator() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

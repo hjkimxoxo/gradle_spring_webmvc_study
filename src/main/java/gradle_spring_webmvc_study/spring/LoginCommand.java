@@ -1,5 +1,8 @@
 package gradle_spring_webmvc_study.spring;
 
+import org.springframework.stereotype.Component;
+
+
 public class LoginCommand {
 	private String email;
 	private String password;
