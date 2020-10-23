@@ -50,5 +50,10 @@ public class Member {
 			throw new WrongIdPasswordException(newPassword);
 		this.password = newPassword;
 	}
+	
+	public boolean matchPassword(String password) {
+		return this.password.equals(password);
+	}
+
 
 }
