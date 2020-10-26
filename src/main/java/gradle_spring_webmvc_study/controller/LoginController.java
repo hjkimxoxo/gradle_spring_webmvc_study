@@ -36,8 +36,7 @@ public class LoginController {
 		return "/login/loginForm";
 	}
 
-	// 쿠키값으로 이메일 주소를 저장할 때 평문 그대로 저장했으나 이메일 주소는 민감한 개인 정보이므로 실제 서비스에서는 암호화해서 보안을 높여야
-	// 한다.
+	// 쿠키값으로 이메일 주소를 저장할 때 평문 그대로 저장했으나 이메일 주소는 민감한 개인 정보이므로 실제 서비스에서는 암호화해서 보안을 높여야 한다.
 	@PostMapping
 	public String submit(LoginCommand loginCommand, Errors errors, HttpSession session, HttpServletResponse response) {
 		//new LoginCommandValidator().validate(loginCommand, errors);

@@ -9,7 +9,8 @@ import org.springframework.context.annotation.Import;
 @ComponentScan(basePackages = {"gradle_spring_webmvc_study.controller", 
 		"gradle_spring_webmvc_study.service", 
 		"gradle_spring_webmvc_study.spring",
-		"gradle_spring_webmvc_study.survey"})
+		"gradle_spring_webmvc_study.survey",
+		"gradle_spring_webmvc_study.common"})
 public class ControllerConfig {
 
 }

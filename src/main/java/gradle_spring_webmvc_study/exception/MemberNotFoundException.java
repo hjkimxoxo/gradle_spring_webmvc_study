@@ -7,4 +7,8 @@ public class MemberNotFoundException extends RuntimeException {
 		// TODO Auto-generated constructor stub
 	}
 
+	public MemberNotFoundException() {
+		// TODO Auto-generated constructor stub
+	}
+
 }
